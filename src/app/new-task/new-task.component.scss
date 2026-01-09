@@ -1,0 +1,101 @@
+@use "../../assets/scss/base" as *;
+
+.modal {
+  width: 100%;
+  overflow: hidden;
+  .modal-header {
+    @include main-flex(space-between, center);
+    padding: 16px 20px;
+    border-bottom: 1px solid $grey8;
+
+    .modal-title {
+      font-size: $font-size-18;
+      font-weight: $semiBold;
+      margin: 0;
+      color: $grey4;
+    }
+
+    .material-icons-round {
+      cursor: pointer;
+      font-size: $font-size-20;
+      color: $grey4;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  .modal-body {
+    .form-group-list {
+      gap: 16px;
+      @include main-flex-all(flex-start, center, column);
+      .form-group {
+        width: 100%;
+        .error-text {
+          font-size: $font-size-12;
+          color: $red;
+        }
+        ::ng-deep {
+          .mat-mdc-form-field {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+
+          .mat-mdc-notch-piece {
+            border-color: $grey8 !important;
+          }
+
+          .mat-mdc-form-field.mat-focused {
+            .mdc-notched-outline__leading,
+            .mdc-notched-outline__trailing,
+            .mdc-notched-outline__notch {
+              border-color: $yellow;
+            }
+          }
+          .mat-mdc-form-field-subscript-wrapper {
+            @include d-none;
+          }
+
+          .mat-mdc-floating-label {
+            color: $grey4;
+            font-size: $font-size-14 !important;
+            mat-label {
+              font-size: $font-size-16;
+            }
+          }
+
+          .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+            color: $yellow;
+            font-size: $font-size-14;
+          }
+          input.mat-mdc-input-element,
+          textarea.mat-mdc-input-element {
+            font-size: $font-size-18;
+            color: $grey4;
+            padding: 0 1rem;
+          }
+          textarea.mat-mdc-input-element {
+            min-height: 90px;
+            resize: vertical;
+          }
+          .mat-mdc-form-field.mat-form-field-invalid {
+            .mdc-notched-outline__leading,
+            .mdc-notched-outline__trailing,
+            .mdc-notched-outline__notch {
+              border-color: $red;
+            }
+
+            .mdc-floating-label {
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mat-mdc-dialog-actions {
+    @include main-flex(space-between, center);
+  }
+}

@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./assets/scss/base" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+//   font-family: $font-family;
+}
+html {
+  font-size: 10px;
+  font-family: $font-family;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: darken($primary, 10%);
+  border-radius: 2px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: lighten($primary, 10%) transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+.ul-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.material-icons-round {
+  font-family: $font-icon;
+}

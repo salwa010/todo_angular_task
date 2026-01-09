@@ -1,0 +1,16 @@
+@use "../../../../assets/scss/base" as *;
+.confirm-modal {
+  padding: 2rem;
+  h2 {
+    font-size: $font-size-16;
+    margin: 0;
+    font-weight: $semiBold;
+  }
+  p {
+    font-size: $font-size-14;
+    margin-top: 1.5rem;
+  }
+  .mat-mdc-dialog-actions {
+    padding: 0;
+  }
+}

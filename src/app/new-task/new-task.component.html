@@ -1,0 +1,41 @@
+<div class="modal">
+  <div class="modal-header">
+    <h2 class="modal-title">Add Task</h2>
+    <span class="material-icons-round" (click)="closeDialog()"> close </span>
+  </div>
+  <mat-dialog-content>
+    <div class="modal-body">
+       <form [formGroup]="formData">
+      <ul class="form-group-list ul-reset">
+        <li class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" />
+          </mat-form-field>
+          <small class="error-text" *ngIf="formData.get('title')?.invalid && formData.get('title')?.touched" >Required</small>
+        </li>
+        <li class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+        </li>
+      </ul>
+       </form>
+
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close class="btn btn-primary-outline" (click)="closeDialog()">Cancel</button>
+    <button
+      mat-button
+      mat-dialog-close
+      cdkFocusInitial
+      class="btn btn-primary"
+      [disabled]="formData.invalid"
+      (click)="submit()"
+    >
+      Submit
+    </button>
+  </mat-dialog-actions>
+</div>

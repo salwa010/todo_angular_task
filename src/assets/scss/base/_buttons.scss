@@ -1,0 +1,51 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "mixins" as *;
+
+.btn {
+  min-height: 4rem;
+  border-radius: 5px;
+  @include main-flex(center, center);
+  font-size: $font-size-16;
+  padding: 0 1.5rem;
+  font-weight: $semiBold;
+  font-family: $font-family;
+
+  cursor: pointer;
+&.btn-primary {
+  background: $primary;
+  color: $white;
+  border: none;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: darken($primary, 8%);
+    box-shadow: 0 6px 16px rgba($primary, 0.35);
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    background: lighten($primary, 25%);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+&.btn-primary-outline {
+  background: transparent;
+  border: 1px solid $primary;
+  color: $primary;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: rgba($primary, 0.08);
+    border-color: darken($primary, 6%);
+    color: darken($primary, 6%);
+  }
+}
+
+  &.btn-white {
+    background: transparent;
+    color: $primary;
+  }
+}
